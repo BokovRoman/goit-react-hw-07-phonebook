@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Section from './components/Section';
-import ContactForm from './components/ContactForm';
-import ContactList from './components/ContactList';
-import Filter from './components/Filter';
-import Loader from './components/Loader';
+import Section from './components/Section/Section';
+import ContactForm from './components/ContactForm/ContactForm';
+import ContactList from './components/ContactList/ContactList';
+import Filter from './components/Filter/Filter';
+// import Loader from './components/Loader';
 import { fetchContactsRequest } from './redux/contacts/contacts-operations';
 import { getIsLoading } from './redux/contacts/contacts-selectors';
 
@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div>
         <Section title="Phonebook">
-          {this.props.isLoading && <Loader />}
+          {this.props.isLoading}
           <ContactForm />
         </Section>
         <Section title="Contacts">
